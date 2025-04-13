@@ -1,0 +1,59 @@
+# prompts.txt
+
+# -------------------------------
+ Grammar Modification (Directives.g4)
+# -------------------------------
+
+How do I define ANTLR lexer rules to recognize data units like 10MB, 5GB, 200ms, or 2.5s in a grammar file?
+
+What is the correct ANTLR4 syntax to define a FLOAT followed by unit fragments like 'KB', 'MB', 's', 'ms'?
+
+How do I update an existing ANTLR parser rule to accept custom token types BYTE_SIZE and TIME_DURATION?
+
+How to regenerate ANTLR parser and lexer classes using Maven for a Java project using Directives.g4?
+
+# -------------------------------
+ Token Classes (ByteSize.java, TimeDuration.java)
+# -------------------------------
+
+Can you help me write a Java class `ByteSize` that parses strings like '10KB', '1.5MB', '2GB' into bytes?
+
+Write a Java class `TimeDuration` that can parse '5ms', '2.5s', '3min' and return duration in milliseconds.
+
+How to extend a base `Token` class in Java to add parsing logic and a method to return canonical values like bytes or milliseconds?
+
+Best practices for handling number + unit conversions in Java with support for decimal values and different cases (e.g. 'mb', 'MB')?
+
+# -------------------------------
+Directive Implementation (AggregateSizeTime.java)
+# -------------------------------
+
+Write a Java class for a directive named `aggregate-size-time` that aggregates values from byte size and time duration columns, supports avg and total, and converts output to MB and seconds.
+
+How do I maintain a running total and count inside a Java directive class that processes a list of rows?
+
+How to handle optional directive arguments and default values in a class implementing the `Directive` interface in Wrangler?
+
+How to use ExecutorContext to store state across multiple rows in an aggregate directive?
+
+# -------------------------------
+ Testing
+# -------------------------------
+
+Write JUnit test cases for a ByteSize class that checks conversion of '10KB', '1.5MB', and edge cases like '0B' or invalid input.
+
+Give me test cases for TimeDuration class to check correct parsing of durations like '200ms', '1.5s', '3min'.
+
+How to write a JUnit test for a custom Wrangler directive that aggregates byte size and duration columns and returns a single row with total size in MB and time in seconds?
+
+Write a test using TestingRig.execute() to validate that the recipe 'aggregate-size-time :size :time totalMB totalSec MB avg' runs and outputs correct values.
+
+How to verify that a new ANTLR grammar token like BYTE_SIZE or TIME_DURATION is parsed correctly using GrammarBasedParserTest in Wrangler?
+
+# -------------------------------
+ Documentation
+# -------------------------------
+
+How should I document usage of two new custom parsers (ByteSize, TimeDuration) and a directive (aggregate-size-time) in README.md for a Java Wrangler plugin?
+
+How to professionally log all AI-assisted development prompts used during a coding assignment for transparency in a file called prompts.txt?
